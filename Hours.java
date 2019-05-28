@@ -101,21 +101,21 @@ public class Hours {
             LocalDateTime currentTime = LocalDateTime.now();
             int hour = currentTime.getHour();
             int minute = currentTime.getMinute();
-
             int percentageValue = (((hour * 60 + minute) - (startHour * 60 + startMinute)) * 100) / (((leaveHour * 60) + leaveMinute) - (startHour * 60 + startMinute));
 
             for(int i = 0; i < 100; i++) {
-
                 if(i < percentageValue) {
                     progress.append('#');
                 }
                 else {
-                    progress.append(' ');
+                    progress.append('.');
                 }
             }
+
             System.out.println("Progress:\n[" + progress.toString() + "] (" + percentageValue + "%)");
             progress.setLength(0);
         } while (!"#".equals(scan.nextLine()));
+
         scan.close();
     }
 }
