@@ -68,7 +68,12 @@ public class Hours {
             System.out.printf(":%s\n", breakEndMinute);
         }
 
-        System.out.printf("\tBreak duration: %d minutes\n", breakDuration);
+        if(breakDuration > 29) {
+            System.out.printf("\tBreak duration: %d minutes\n", breakDuration);
+        }
+        else {
+            System.out.printf("\tBreak duration: %d minutes (minimum 30)\n", breakDuration = 30);
+        }
         
         int leaveHour = startHour + 8;
         int leaveMinute = startMinute + (breakDuration-30);
